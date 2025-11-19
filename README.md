@@ -42,3 +42,31 @@ npm run dev
 ```
 
 `Ecommerce` should now be running on [localhost:3000](http://localhost:3000/).
+
+## Project structure
+
+```
+├── app/ # App Router (pages and API routes)
+│ ├── auth/ # Authentication flows
+│ │ ├── login/ # Login page
+│ │ ├── sign-up/ # User registration
+│ │ ├── forgot-password/ # Password recovery
+│ │ └── ... # Other flows (confirmation, error, etc.)
+│ ├── home/ # Home page
+│ ├── layout.tsx # Root layout
+│ └── page.tsx # Landing page (/)
+│
+├── src/
+│ ├── api/ # Backend logic (e.g., user data)
+│ ├── components/ # Reusable components
+│ │ ├── ui/ # Primitive UI components (shadcn/ui)
+│ │ ├── auth/ # Auth forms and buttons
+│ │ └── ... # Other components (products, buttons, etc.)
+│ ├── lib/ # Utilities and config
+│ │ └── supabase/ # Supabase integration
+│ └── types/ # TypeScript types (product, user)
+│
+├── middleware.ts # Route protection (authentication)
+│
+└── ... # Configuration (Tailwind, Next.js, etc.)
+```
