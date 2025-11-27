@@ -1,13 +1,14 @@
 export interface User {
-  id: string
+  id: number
   fullName: string
   email: string
-  isActive: boolean
-  role: "admin" | "customer" | "seller"
-  address: string
-  createdAt: Date
+  password: string
+  // isActive: boolean
+  // role: "admin" | "customer" | "seller"
+  // address: string
+  // createdAt: Date
 
   // Opcional fields
-  tags?: string[]
-  description?: string
+  // tags?: string[]
+  // description?: string
 }
