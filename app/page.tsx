@@ -1,6 +1,6 @@
 // import { products } from "@/api/data/product";
 import { AuthButton } from "@/components/auth-button";
-import ProductList from "@/components/ProductList";
+import { ProductsView } from "@/components/products-view";
 import { ThemeSwitcher } from"@/components/theme-switcher";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
@@ -9,7 +9,6 @@ import { Product } from "@/types";
 export default async function Home() {
   const supabase = await createClient();
   const products2 = await supabase.from("products").select("*")
-  console.log(products2);
 
   return (
     <main className="min-h-screen flex flex-col items-center">
@@ -26,9 +25,9 @@ export default async function Home() {
           </div>
         </nav>        
       </div>
-      <div className="container">
-        <h2>Productos</h2>
-        <ProductList products={products2.data as Product[]} />
+      <div className="px-5 w-full max-w-5xl py-5 flex flex-col gap-4">
+        <h1 className="font-bold text-4xl">Products</h1>
+        <ProductsView initialProducts={(products2.data as Product[]) ?? []} />
       </div>
 
     </main>
