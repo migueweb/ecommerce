@@ -1,4 +1,6 @@
 export interface Product {
+  
+  id: number
   sku: string
   name: string
   brand: string
@@ -6,10 +8,9 @@ export interface Product {
   price: number
   isActive: boolean
   category: string
-  imageUrl: string
+  image_url: string
   createdAt: Date
 
-  // Optional fields
   tags?: string[]
   dimensions?: { width: number; height: number; depth?: number }
   description?: string
