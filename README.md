@@ -1,5 +1,12 @@
 # `E-commerce` 
 
+
+ A simple e-commerce application built with Next.js and Supabase, including user authentication, global state, and product browsing functionality.
+
+Production deployment: https://ecommerce-riwi.vercel.app/
+
+---
+
 ## Project technologies
 
 - [Next.js](https://nextjs.org/)
@@ -70,3 +77,47 @@ npm run dev
 │
 └── ... # Configuration (Tailwind, Next.js, etc.)
 ```
+
+## Custom Hooks
+
+ - useAuthStore (example location: src/store/auth-store.ts)
+
+    Manages global authentication state using Zustand.
+
+    Provides actions and selectors for session, login, logout, and user info.
+
+- useProducts (example location: src/hooks/useProducts.ts)
+
+    Fetches product lists and product details from Supabase.
+
+    Handles loading and error states for UI consumption.
+
+These hooks centralize business logic and make components simpler and reusable.
+
+## Main UI Components
+
+- Navbar (example: src/components/navbar.tsx)
+
+    Navigation between routes, responsive behavior, and user menu.
+
+- ProductCard (example: src/components/products/ProductCard.tsx)
+
+    Displays product image, title, price, and quick actions (add to cart, view details).
+
+## uthentication behaviour
+
+- Supabase email/password authentication.
+
+- Session persistence handled by Supabase client.
+
+- Middleware (middleware.ts) protects pages that require authentication and redirects unauthenticated users to the login page.
+
+
+## Contributors
+
+- Miguel Amador
+- Eduado Pertuz
+- Jaider Rodriguez
+- Dylan Sanchez
+- Maria Viloria
+
